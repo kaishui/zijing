@@ -1,11 +1,9 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
-const App = () => {
-    return <div>Hello world for zijing</div>
-}
+import {Hello} from './components/Hello'
 
 ReactDOM.render(
-    <App/>,
+    <Hello message="birt on 2020"/>,
     document.getElementById('root')
 );
