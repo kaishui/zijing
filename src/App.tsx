@@ -1,9 +1,9 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
-import {Hello} from './components/Hello'
+import {World} from './components/World'
 
 ReactDOM.render(
-    <Hello message="birt on 2020"/>,
+    <World message='content from startup'/>,
     document.getElementById('root')
 );
