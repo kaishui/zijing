@@ -1,6 +1,7 @@
 import * as React from 'react';
 import * as ReactDom from 'react-dom';
-import {Hello} from './Hello'
+import { Hello } from './Hello'
+import { CheckboxWithLabel } from './CheckboxWithLabel'
 
 type Message = {
     message: string
@@ -16,7 +17,7 @@ interface AppState {
 
 class World extends React.Component<Message, AppState> {
 
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
             count: 0
@@ -29,14 +30,18 @@ class World extends React.Component<Message, AppState> {
         })
     }
 
+   
     render() {
 
         return (
-        <div>
-            message : {this.props.message} state count: {this.state.count}
-            <Hello message='provide informations to the user'></Hello>
-        <button onClick={this.increment}>increment {this.state.count}</button>
-        </div>
+            <div>
+                message : {this.props.message} state count: {this.state.count}
+                <Hello message='provide informations to the user'></Hello>
+                <CheckboxWithLabel on='on' off='off' />
+                <button onClick={this.increment}>
+                    increment {this.state.count}
+                </button>
+            </div>
         );
     }
 }
