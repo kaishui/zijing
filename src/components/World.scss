@@ -1,0 +1,25 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    min-width: 100vw;
+    height: 100vh;
+    background-color: lightgray;
+    color: white;
+    text-align: center;
+    button {
+        width: 10vw;
+        height: 20vh;
+        background-color: yellow;
+        color: red;
+    }
+}
+
+.content {
+    width: 100vw;
+    height: 30vh;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    position: relative;
+    top: 40vh;
+}
