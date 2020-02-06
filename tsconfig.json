@@ -1,13 +1,15 @@
 {
     "compilerOptions": {
         "sourceMap": true,
-        "module": "commonjs",
-        "target": "es5",
+        "module": "esnext",
+        "target": "es2020",
         "jsx": "react"
     },
     "include": [
-        "src",
-        "public/scss"
+        "src"
+    ],
+    "exclude": [
+        "src/setupEnzyme.ts"
     ],
     "compileOnSave": false
 }

@@ -1,0 +1,15 @@
+$border : 0px solid red;
+
+.layout {
+    background-color: grey;
+    display: flex;
+    flex-wrap: nowrap;
+    border:  $border;
+    .main {
+        border:  $border;
+        display: flex;
+        width: 100vw;
+        margin-top: 70px;
+        text-align: center;
+    }
+}
