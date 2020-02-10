@@ -1,9 +1,10 @@
 {
     "compilerOptions": {
         "sourceMap": true,
-        "module": "esnext",
-        "target": "es2020",
-        "jsx": "react"
+        "module": "es6",
+        "target": "es5",
+        "jsx": "react",
+        "experimentalDecorators": true
     },
     "include": [
         "src"
