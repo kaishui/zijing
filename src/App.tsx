@@ -11,17 +11,23 @@ import MyComponent from './containers/CounterContainer';
 
 // @ts-ignore
 import thunk from 'redux-thunk';
-import Counter from './containers/ContentContainer';
+import LayoutContainer from './containers/LayoutContainer';
 // @ts-ignore
 import { composeWithDevTools } from 'redux-devtools-extension';
-
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+} from "react-router-dom";
 
 const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)))
 
 ReactDOM.render(
     <Provider store={store}>
-        <MyComponent backgroundColor='red' ></MyComponent>
-        <Counter></Counter>
+        <Router>
+            <LayoutContainer></LayoutContainer>
+        </Router>
     </Provider>
     ,
     document.getElementById('root')
