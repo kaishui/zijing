@@ -1,24 +1,25 @@
-import { connect, ConnectedProps } from 'react-redux';
-import * as React from 'react';
-import { Counter } from '../components/Counter';
-import { toggleIsOn } from '../actions/index';
+import { connect, ConnectedProps } from "react-redux";
+import * as React from "react";
+import { Counter } from "../components/Counter";
+import { toggleIsOn, submitText } from '../actions/index';
+// @ts-ignore
+import { bindActionCreators } from 'redux'
+
 
 type ContentState = {
-    text: string,
-    isOn: boolean
-}
+  text: string;
+  isOn: boolean;
+};
 
-const mapStateToProps = (state) => {
-    const {creducer} = state
-    console.log("map state to props:" + creducer.text)
-    return {
-        text: creducer.text,
-        isOn: creducer.isOn
-    }
-}
+const mapStateToProps = state => {
+  const { creducer } = state;
+  console.log("map state to props:" + creducer.text);
+  return {
+    text: creducer.text,
+    isOn: creducer.isOn
+  };
+};
 
-const mapDispathToProps = (dispath, ownerProps) => ({
-    onclick: (...args) => dispath(toggleIsOn("text", true))
-})
+const mapDispathToProps = (dispath, ownerProps) => bindActionCreators({submitText, toggleIsOn},dispath)
 
 export default connect(mapStateToProps, mapDispathToProps)(Counter);

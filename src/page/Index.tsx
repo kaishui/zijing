@@ -10,6 +10,7 @@ import './index.scss'
 export class Layout extends React.Component {
 
     render(){
+        let {} = this.props
         return (
             <div className='layout'>
                 <PageHeader></PageHeader>

@@ -9,6 +9,8 @@ import {
     useRouteMatch,
     useParams
 } from "react-router-dom";
+import { Counter } from '../components/Counter';
+import ContentContainer from '../containers/ContentContainer';
 
 function Home() {
     return <div>Home</div>;
@@ -78,6 +80,7 @@ export class Content extends React.Component<{ companyName: string }> {
                     </Route>
                     <Route path="/">
                         <Home />
+                        <ContentContainer></ContentContainer>
                     </Route>
                     
                 </Switch>

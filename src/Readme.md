@@ -19,7 +19,7 @@ Cause 'can not find module "redux"'
 
 ## 4. Support router
 ```
-
+npm i react-router-dom @types/react-router-dom -D
 ```
 
 ## 5. ajax
