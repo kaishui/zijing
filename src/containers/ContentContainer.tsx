@@ -2,7 +2,6 @@ import { connect, ConnectedProps } from "react-redux";
 import * as React from "react";
 import { Counter } from "../components/Counter";
 import { toggleIsOn, submitText } from '../actions/index';
-// @ts-ignore
 import { bindActionCreators } from 'redux'
 
 

@@ -1,7 +1,7 @@
 import { connect, ConnectedProps } from "react-redux";
 import * as React from "react";
 import { toggleIsOn, submitText } from '../actions/index';
-import { Layout } from "../page/Index";
+import { Page } from "../page/Index";
 type ContentState = {
   text: string;
   isOn: boolean;
@@ -20,4 +20,4 @@ const mapDispathToProps = (dispath, ownerProps) => ({
   onclick: (...args) => dispath(toggleIsOn("text", true))
 });
 
-export default connect(mapStateToProps, mapDispathToProps)(Layout);
+export default connect(mapStateToProps, mapDispathToProps)(Page);

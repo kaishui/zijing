@@ -1,25 +1,28 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
-import {Content} from './Content';
+import {PageContent} from './PageContent';
 import {PageHeader} from './PageHeader';
-import {Menu} from './Menu';
-import {Footer} from './Footer';
-import './index.scss'
+import {PageMenu} from './PageMenu';
+import {PageFooter} from './PageFooter';
+import {Layout} from "antd"
 
-export class Layout extends React.Component {
+import MenuContainer from '../containers/MenuContainer'
 
-    render(){
+
+export class Page extends React.Component {
+
+    render() {
         let {} = this.props
         return (
-            <div className='layout'>
+            <Layout style={{minHeight: '100vh'}}>
                 <PageHeader></PageHeader>
-                <div className='main'>
-                    <Menu></Menu>
-                    <Content companyName='content'></Content>
-                </div>
-                <Footer companyName='zijing footer'></Footer>
-            </div>
+                <Layout>
+                    <MenuContainer></MenuContainer>
+                    <PageContent companyName='content'></PageContent>
+                    <PageFooter companyName='zijing footer'></PageFooter>
+                </Layout>
+            </Layout>
         );
     }
 }

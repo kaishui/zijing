@@ -26,4 +26,8 @@ npm i react-router-dom @types/react-router-dom -D
 
 ## 6. ESLint
 
-## 7. nextjs
+## 7. Add antd
+
+## reference:
+
+1. [Typescript cannot find redux](https://stackoverflow.com/questions/43003491/typescript-cannot-find-redux)
