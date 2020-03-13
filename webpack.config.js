@@ -4,7 +4,9 @@ const webpack = require('webpack'); //to access built-in plugins
 
 
 module.exports = {
-    entry: './src/App.tsx',
+    entry: {
+        app: './src/App.tsx'
+    },
     output: {
         filename: '[name].bundle.js',
         path: path.resolve(__dirname, 'dist'),
@@ -13,7 +15,7 @@ module.exports = {
     resolve: {
         extensions: ['.ts', '.tsx', '.js']
     },
-    devtool: 'inline-source-map',
+    devtool: 'source-map',
     mode: process.env.NODE_ENV === 'production' ? process.env.NODE_ENV : 'development',
     module: {
         rules: [
@@ -52,5 +54,21 @@ module.exports = {
     plugins: [
         new webpack.ProgressPlugin(),
         new HtmlWebpackPlugin({template: './public/index.html'}),
-    ]
+    ],
+    optimization: {
+        splitChunks: {
+            cacheGroups: {
+                commons: {
+                    test: /[\\/]node_modules[\\/]/,
+                    // cacheGroupKey here is `commons` as the key of the cacheGroup
+                    name(module, chunks, cacheGroupKey) {
+                        const moduleFileName = module.identifier().split('/').reduceRight(item => item);
+                        const allChunksNames = chunks.map((item) => item.name).join('~');
+                        return `${cacheGroupKey}-${allChunksNames}-${moduleFileName}`;
+                    },
+                    chunks: 'all'
+                }
+            }
+        }
+    }
 }

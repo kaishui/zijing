@@ -1,6 +1,7 @@
 import * as React from 'react';
 import {Button, DatePicker} from "antd"
-
+import * as echarts from "echarts"
+import ECharts = echarts.ECharts;
 
 type CounterProps = {
     isOn: boolean,
@@ -30,9 +31,9 @@ export class Counter extends React.Component<CounterProps>{
             }]
         });
 
-        // let mychart : ECharts = echarts.init(document.getElementById('chart') as HTMLDivElement);
-        //
-        // mychart.setOption(options);
+        let mychart : ECharts = echarts.init(document.getElementById('chart') as HTMLDivElement);
+
+        mychart.setOption(options);
     }
 
     render() {
@@ -43,7 +44,7 @@ export class Counter extends React.Component<CounterProps>{
                 <div>{this.props.isOn}</div>
                 <Button type="primary">PRESS ME</Button>
                 <DatePicker />
-                {/*<div id="chart" style={{width: '100%', height: '300px' }}></div>*/}
+                <div id="chart" style={{width: '100%', height: '300px' }}></div>
 
             </div>
         );
